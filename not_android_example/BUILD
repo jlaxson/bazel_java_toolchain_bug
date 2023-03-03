@@ -1,3 +1,5 @@
+# load("@rules_java//java:defs.bzl", "java_library")
+
 constraint_value(
     name = "smartcard_embedded_java",
     constraint_setting = "@platforms//os",

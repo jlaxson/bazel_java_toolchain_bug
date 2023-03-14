@@ -1,3 +1,4 @@
 build:android --platforms=//android:android //android/...
 build:not_android --platforms=//not_android_example:platform
+build:simple_cross_compile --platforms=//not_android_example:linux
 build --java_runtime_version=remotejdk_11

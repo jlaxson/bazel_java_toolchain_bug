@@ -19,3 +19,14 @@ To debug, rerun with --toolchain_resolution_debug='@bazel_tools//tools/jdk:runti
 If platforms or toolchains are a new concept for you, we'd encourage reading https://bazel.build/concepts/platforms-intro.
 ERROR: Analysis of target '//not_android_example:java_test' failed; build aborted:
 ```
+
+# Less esoteric platform example
+
+Assuming you're running on darwin (otherwise change //not_android_example:platform to some other platform)
+
+`bazel test --platforms=//not_android_example //not_android_example:java_test`
+
+`/sandbox/darwin-sandbox/8/execroot/__main__/bazel-out/darwin_arm64-fastbuild/bin/not_android_example/java_test.runfiles/__main__/not_android_example/java_test: line 390: /Volumes/Bazel/8cf025f840017803cd993c3d9e7b9a10/sandbox/darwin-sandbox/8/execroot/__main__/bazel-out/darwin_arm64-fastbuild/bin/not_android_example/java_test.runfiles/remotejdk11_linux/bin/java: cannot execute binary file
+`
+
+It's running the wrong jdk for the tests.
